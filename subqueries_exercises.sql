@@ -120,6 +120,3 @@ from salaries as s2
 	JOIN dept_emp as t on (e.emp_no = t.emp_no)
 	JOIN departments as r on (t.dept_no = r.dept_no)
 where s2.salary = (SELECT max(s.salary) max_sal FROM salaries as s WHERE s.to_date > CURDATE());
-
-
- ()
