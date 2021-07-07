@@ -75,7 +75,9 @@ USE germain_1476;
 
 # Historic salaries for departments and std dev
 
-select avg(salary), std(salary) from employees.salaries;
+SELECT AVG(salary), STD(salary) FROM employees.salaries;
+
+# Avg salary = 63810.7448 Std Dev = 16904.82828800014
 
 CREATE TEMPORARY TABLE hist_sal AS
 	SELECT AVG(salary) AS h_avg_salary, std(salary) AS h_std_salary
@@ -119,8 +121,6 @@ SET zscore = (cur_dept_avg - historic_avg) / historic_std;
 
 # Show results
 
-select * from cur_sal
-order by zscore desc;
-
-    
-    
+SELECT * FROM cur_sal
+ORDER BY zscore DESC;
+   
